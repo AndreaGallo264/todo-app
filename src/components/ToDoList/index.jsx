@@ -1,18 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
 
 //Components
 import ToDo from "../ToDo";
 
-const ToDoList = ({ toDoList, handleToggle }) => {
+const ToDoList = ({ list }) => {
+  if (!list) return <div></div>;
   return (
     <>
       <div>
-        {toDoList.map((todo) => {
-          return <ToDo todo={todo} handleToggle={handleToggle} key={todo.id} />;
+        {list.map((todo) => {
+          return (
+            <ToDo
+              todo={todo}
+              handleToggle={() => {} /* props.handleToggle */}
+              key={todo.id}
+            />
+          );
         })}
       </div>
     </>
   );
 };
 
-export default ToDoList;
+const mapStateToProps = (state) => {
+  return { list: state.list };
+};
+
+export default connect(mapStateToProps)(ToDoList);

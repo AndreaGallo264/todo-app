@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Provider } from "react-redux";
+import store from "./store";
 
 //Mocked data
 import data from "./data.json";
@@ -39,12 +41,14 @@ function App() {
     setToDoList(copy);
   };
   return (
-    <div className="App">
-      <Header />
-      <ToDoList toDoList={toDoList} handleToggle={handleToggle} />
-      <button onClick={handleFilter}>Filter completed to do items</button>
-      <ToDoForm addTask={addTask} />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <ToDoList handleToggle={handleToggle} />
+        <button onClick={handleFilter}>Filter completed to do items</button>
+        <ToDoForm addTask={addTask} />
+      </div>
+    </Provider>
   );
 }
 
