@@ -10,17 +10,27 @@ import ToDoList from "./ToDoList";
 function App() {
   const [toDoList, setToDoList] = useState(data);
   const handleToggle = (id) => {
-    let mapped = toDoList.map((task) => {
-      return task.id == id
+    const mapped = toDoList.map((task) => {
+      return task.id === id
         ? { ...task, complete: !task.complete }
         : { ...task };
     });
     setToDoList(mapped);
   };
+
+  const handleFilter = () => {
+    let filtered = toDoList.filter((task) => {
+      return !task.complete;
+    });
+    setToDoList(filtered);
+  };
   return (
     <div className="App">
       <Header />
       <ToDoList toDoList={toDoList} handleToggle={handleToggle} />
+      <button onClick={() => handleFilter()}>
+        Filter completed to do items
+      </button>
     </div>
   );
 }
