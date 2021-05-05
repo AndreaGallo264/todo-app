@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-
+import moment from "moment";
 const ToDoForm = ({ addTask }) => {
-  const [userInput, setUserInput] = useState({
+  const today = moment(new Date()).format("yyyy-MM-DD");
+  const initialValue = {
     task: "",
-    dueDate: new Date(),
-  });
+    dueDate: today,
+  };
+  const [userInput, setUserInput] = useState(initialValue);
   const handleChange = (event) => {
     setUserInput({
       ...userInput,
@@ -14,10 +16,7 @@ const ToDoForm = ({ addTask }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(userInput);
-    setUserInput({
-      task: "",
-      dueDate: new Date(),
-    });
+    setUserInput(initialValue);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -27,15 +26,16 @@ const ToDoForm = ({ addTask }) => {
         onChange={handleChange}
         placeholder="Enter task..."
         name="task"
+        required
       />
       <input
         type="date"
-        id="start"
         name="dueDate"
-        value="2018-07-22"
-        min="2018-01-01"
-        max="2018-12-31"
+        value={userInput.dueDate}
+        min={today}
+        max="2050-01-01"
         onChange={handleChange}
+        required
       />
       <button type="submit">Add</button>
     </form>

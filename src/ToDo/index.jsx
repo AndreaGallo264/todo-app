@@ -1,7 +1,9 @@
 import React from "react";
+import moment from "moment";
 import "./style.css";
 
 const ToDo = ({ todo, handleToggle }) => {
+  const formatedDate = moment(new Date(todo.dueDate)).format("MM/DD/YYYY");
   return (
     <>
       <div
@@ -12,7 +14,7 @@ const ToDo = ({ todo, handleToggle }) => {
       >
         {todo.task}
       </div>
-      <div>{todo.dueDate}</div>
+      <div>Due date:{formatedDate}</div>
     </>
   );
 };
