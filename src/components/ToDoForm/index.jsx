@@ -19,26 +19,29 @@ const ToDoForm = ({ addTask }) => {
     setUserInput(initialValue);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        value={userInput.task}
-        type="text"
-        onChange={handleChange}
-        placeholder="Enter task..."
-        name="task"
-        required
-      />
-      <input
-        type="date"
-        name="dueDate"
-        value={userInput.dueDate}
-        min={today}
-        max="2050-01-01"
-        onChange={handleChange}
-        required
-      />
-      <button type="submit">Add</button>
-    </form>
+    <>
+      <h2>Create new task</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={userInput.task}
+          type="text"
+          onChange={handleChange}
+          placeholder="Enter task..."
+          name="task"
+          required
+        />
+        <input
+          type="date"
+          name="dueDate"
+          value={userInput.dueDate}
+          min={today}
+          max="2050-01-01"
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+    </>
   );
 };
 

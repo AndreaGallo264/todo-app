@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import data from "./data.json";
 
 //Components
-import Header from "./Header";
-import ToDoList from "./ToDoList";
-import ToDoForm from "./ToDoForm";
+import Header from "./components/Header";
+import ToDoList from "./components/ToDoList";
+import ToDoForm from "./components/ToDoForm";
 
 function App() {
   const [toDoList, setToDoList] = useState(data);
