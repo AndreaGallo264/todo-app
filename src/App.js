@@ -1,16 +1,11 @@
-import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
-import { Button, Typography } from "@material-ui/core";
+import React from "react";
 
+//Components
+import Header from "./Header";
 function App() {
   return (
     <div className="App">
-      <Typography variant="h5" component="h5">
-        <AccessAlarmIcon color="primary" />
-        Todo App
-      </Typography>
-      <Button variant="contained" color="secondary">
-        Primary
-      </Button>
+      <Header />
     </div>
   );
 }
