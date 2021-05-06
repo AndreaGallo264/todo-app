@@ -1,17 +1,14 @@
 import React from "react";
-import { List, Box } from "@material-ui/core";
-
+import { List, Typography, Grid } from "@material-ui/core";
 //Components
 import ToDo from "../ToDo";
 
 const ToDoList = ({ list }) => {
   return (
-    <Box
-      border={1}
-      borderColor="primary.main"
-      borderRadius="borderRadius"
-      marginTop={2}
-    >
+    <Grid container direction="column">
+      <Typography variant="h3" color="primary" align="center">
+        Your to dos
+      </Typography>
       {list && (
         <List>
           {list.map((todo) => {
@@ -19,7 +16,7 @@ const ToDoList = ({ list }) => {
           })}
         </List>
       )}
-    </Box>
+    </Grid>
   );
 };
 

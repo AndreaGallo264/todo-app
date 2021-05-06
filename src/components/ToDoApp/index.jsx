@@ -1,33 +1,36 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid, Typography, Box } from "@material-ui/core";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider, Box } from "@material-ui/core";
 import { outerTheme } from "../../styles";
 import { removeCompletedTasks, addTask } from "../../store/actions";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //Components
 import Header from "../Header";
 import ToDoList from "../ToDoList";
 import ToDoForm from "../ToDoForm";
+import PageNotFound from "../PageNotFound";
+import Footer from "../Footer";
 
 const ToDoApp = ({ list, filterCompletedtasks, addNewTask }) => {
   return (
     <ThemeProvider theme={outerTheme}>
-      <Header filterCompletedtasks={filterCompletedtasks} />
-      <Grid container spacing={10}>
-        <Grid item xs={12} md={6} direction="column">
-          <Box paddingTop={12} px={3}>
-            <Typography variant="h3" color="primary">
-              Your to dos
-            </Typography>
-            <ToDoList list={list} />
-          </Box>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Box paddingTop={12}>
-            <ToDoForm addTask={addNewTask} />
-          </Box>
-        </Grid>
-      </Grid>
+      <Router>
+        <Header filterCompletedtasks={filterCompletedtasks} />
+        <Box paddingTop={14}>
+          <Switch>
+            <Route exact path="/">
+              <ToDoList list={list} />
+            </Route>
+            <Route exact path="/new">
+              <ToDoForm addTask={addNewTask} />
+            </Route>
+            <Route path="/">
+              <PageNotFound />
+            </Route>
+          </Switch>
+        </Box>
+        <Footer />
+      </Router>
     </ThemeProvider>
   );
 };
