@@ -5,11 +5,14 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 import { formatDateExpression } from "../Utils/formatDate";
+
 const CalendarInput = ({ selectedDate, handleDateChange }) => {
   const [valueDate, setDate] = useState(selectedDate);
+
   useEffect(() => {
     setDate(selectedDate);
   }, [selectedDate]);
+
   return (
     <MuiPickersUtilsProvider utils={MomentUtils}>
       <KeyboardDatePicker
@@ -23,6 +26,7 @@ const CalendarInput = ({ selectedDate, handleDateChange }) => {
         KeyboardButtonProps={{
           "aria-label": "change date",
         }}
+        required
         name="dueDate"
         asp-format={`0:${formatDateExpression}`}
       />

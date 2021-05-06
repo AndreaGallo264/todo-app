@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField, Grid, Typography } from "@material-ui/core";
 
 //Components
 import CalendarInput from "./calendarInput";
@@ -21,27 +21,34 @@ const ToDoForm = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(userInput);
-    setUserInput(initialValue);
+    //Checks if date is invalid
+    if (!userInput.dueDate.includes("Invalid")) {
+      addTask(userInput);
+      setUserInput(initialValue);
+    }
   };
   return (
     <>
-      <h2>Create new task</h2>
+      <Typography variant="h3" color="primary">
+        Create a new task
+      </Typography>
       <form onSubmit={handleSubmit}>
-        <TextField
-          value={userInput.task}
-          onChange={handleChange}
-          label="Task"
-          name="task"
-          required
-        />
-        <CalendarInput
-          selectedDate={userInput.dueDate}
-          handleDateChange={handleDateChange}
-        />
-        <Button type="submit" variant="outlined" color="primary">
-          Add
-        </Button>
+        <Grid container item xs={12} md={6} justify="center" direction="column">
+          <TextField
+            value={userInput.task}
+            onChange={handleChange}
+            label="Task"
+            name="task"
+            required
+          />
+          <CalendarInput
+            selectedDate={userInput.dueDate}
+            handleDateChange={handleDateChange}
+          />
+          <Button type="submit" variant="contained" color="primary">
+            Add
+          </Button>
+        </Grid>
       </form>
     </>
   );

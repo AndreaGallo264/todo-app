@@ -1,22 +1,28 @@
 import React from "react";
-import { AppBar, Typography, Toolbar } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
+import { AppBar, Typography, Box, Button } from "@material-ui/core";
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: "0.5rem",
-  },
-}));
-const Header = () => {
-  const classes = useStyles();
+
+const Header = ({ filterCompletedtasks }) => {
   return (
-    <AppBar className={classes.root} position="fixed">
-      <Toolbar>
-        <Typography variant="h3" component="h2" className={classes.title}>
+    <AppBar position="fixed">
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        flexWrap="wrap"
+        padding={2}
+      >
+        <Typography variant="h3" component="h2">
           <FormatListBulletedIcon fontSize="large" />
           To do App
         </Typography>
-      </Toolbar>
+        <Button
+          onClick={() => filterCompletedtasks()}
+          variant="contained"
+          color="secondary"
+        >
+          Filter completed to do items
+        </Button>
+      </Box>
     </AppBar>
   );
 };

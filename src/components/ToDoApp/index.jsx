@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-
-//MaterialUI
-import { Grid, Button, Typography } from "@material-ui/core";
+import { Grid, Typography, Box } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { outerTheme } from "../../styles";
 import { removeCompletedTasks, addTask } from "../../store/actions";
 //Components
 import Header from "../Header";
@@ -11,25 +11,24 @@ import ToDoForm from "../ToDoForm";
 
 const ToDoApp = ({ list, filterCompletedtasks, addNewTask }) => {
   return (
-    <>
-      <Header />
-      <Grid container spacing={1}>
-        <Grid container item xs={12} md={6} justify="center" direction="column">
-          <Typography variant="h3">Todo List</Typography>
-          <ToDoList list={list} />
-          <Button
-            onClick={() => filterCompletedtasks()}
-            variant="outlined"
-            color="secondary"
-          >
-            Filter completed to do items
-          </Button>
+    <ThemeProvider theme={outerTheme}>
+      <Header filterCompletedtasks={filterCompletedtasks} />
+      <Grid container spacing={10}>
+        <Grid item xs={12} md={6} direction="column">
+          <Box paddingTop={12} px={3}>
+            <Typography variant="h3" color="primary">
+              Your to dos
+            </Typography>
+            <ToDoList list={list} />
+          </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <ToDoForm addTask={addNewTask} />
+          <Box paddingTop={12}>
+            <ToDoForm addTask={addNewTask} />
+          </Box>
         </Grid>
       </Grid>
-    </>
+    </ThemeProvider>
   );
 };
 
