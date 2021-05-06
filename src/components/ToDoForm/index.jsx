@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import moment from "moment";
+import { Button, TextField } from "@material-ui/core";
+
+//Components
+import CalendarInput from "./calendarInput";
+import { formatDate } from "../Utils/formatDate";
 
 const ToDoForm = ({ addTask }) => {
-  const today = moment(new Date()).format("yyyy-MM-DD");
+  const today = formatDate("");
   const initialValue = { task: "", dueDate: today };
   const [userInput, setUserInput] = useState(initialValue);
 
   const handleChange = (event) => {
     setUserInput({ ...userInput, [event.target.name]: event.target.value });
+  };
+
+  const handleDateChange = (event) => {
+    const formatedDate = formatDate(event._d);
+    setUserInput({ ...userInput, dueDate: formatedDate });
   };
 
   const handleSubmit = (e) => {
@@ -19,24 +28,20 @@ const ToDoForm = ({ addTask }) => {
     <>
       <h2>Create new task</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <TextField
           value={userInput.task}
-          type="text"
           onChange={handleChange}
-          placeholder="Enter task..."
+          label="Task"
           name="task"
           required
         />
-        <input
-          type="date"
-          name="dueDate"
-          value={userInput.dueDate}
-          min={today}
-          max="2050-01-01"
-          onChange={handleChange}
-          required
+        <CalendarInput
+          selectedDate={userInput.dueDate}
+          handleDateChange={handleDateChange}
         />
-        <button type="submit">Add</button>
+        <Button type="submit" variant="outlined" color="primary">
+          Add
+        </Button>
       </form>
     </>
   );

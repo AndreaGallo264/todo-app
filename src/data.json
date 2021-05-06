@@ -2,100 +2,100 @@
   "id": 1,
   "task": "Give dog a bath",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 2,
   "task": "Do laundry",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 3,
   "task": "Vacuum floor",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 4,
   "task": "Feed cat",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 5,
   "task": "Change light bulbs",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 6,
   "task": "Go to Store",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 7,
   "task": "Fill gas tank",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 8,
   "task": "Change linens",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 9,
   "task": "Rake leaves",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 10,
   "task": "Bake Cookies",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 11,
   "task": "Take nap",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 12,
   "task": "Read book",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 13,
   "task": "Exercise",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 14,
   "task": "Give dog a bath",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 15,
   "task": "Do laundry",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 16,
   "task": "Vacuum floor",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 17,
   "task": "Feed cat",
   "complete": true,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 18,
   "task": "Change light bulbs",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 19,
   "task": "Go to Store",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }, {
   "id": 20,
   "task": "Fill gas tank",
   "complete": false,
-  "dueDate": "Wed May 05 2021 17:49:49 GMT-0300 (hora estándar de Argentina)"
+  "dueDate": "2021-05-08"
 }]

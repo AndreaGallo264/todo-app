@@ -8,7 +8,7 @@ import {
 } from "../actions/actionsTypes";
 import { changeTaskState, getAllTasks, addNewtask } from "./reducersFunctions";
 
-const initialState = { list: data, sortingBy: null, order: null };
+const initialState = { list: data };
 const toDoReducer = (state = initialState, action) => {
   switch (action.type) {
     case REMOVE_COMPLETED_TASKS:
