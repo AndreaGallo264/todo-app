@@ -2,6 +2,7 @@ import {
   REMOVE_COMPLETED_TASKS,
   ADD_TASK,
   CHANGE_TASK_STATE,
+  INCREMENT_ID,
 } from "./actionsTypes";
 
 export const removeCompletedTasks = () => ({
@@ -16,4 +17,7 @@ export const addTask = (newTask) => ({
   payload: {
     new: newTask,
   },
+});
+export const incrementId = () => ({
+  type: INCREMENT_ID,
 });

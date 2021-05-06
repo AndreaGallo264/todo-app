@@ -1,56 +1,83 @@
 import React, { useState } from "react";
-import { Button, TextField, Grid, Typography } from "@material-ui/core";
-
+import {
+  Button,
+  TextField,
+  Typography,
+  Box,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+} from "@material-ui/core";
+import { useStyles } from "./styles";
 //Components
 import CalendarInput from "./calendarInput";
 import { formatDate } from "../Utils/formatDate";
+import FormImg from "../../assets/formImg.jpg";
+import { handleChange, handleDateChange, handleSubmit } from "./formHandlers";
+import { useHistory } from "react-router-dom";
 
-const ToDoForm = ({ addTask }) => {
+const ToDoForm = ({ addTask, incrementLastId }) => {
+  const classes = useStyles();
   const today = formatDate("");
   const initialValue = { task: "", dueDate: today };
   const [userInput, setUserInput] = useState(initialValue);
-
-  const handleChange = (event) => {
-    setUserInput({ ...userInput, [event.target.name]: event.target.value });
-  };
-
-  const handleDateChange = (event) => {
-    const formatedDate = formatDate(event._d);
-    setUserInput({ ...userInput, dueDate: formatedDate });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //Checks if date is invalid
-    if (!userInput.dueDate.includes("Invalid")) {
-      addTask(userInput);
-      setUserInput(initialValue);
-    }
-  };
+  let history = useHistory();
   return (
-    <>
+    <Box display="flex" flexDirection="column" alignItems="center">
       <Typography variant="h3" color="primary">
-        Create a new task
+        Create new
       </Typography>
-      <form onSubmit={handleSubmit}>
-        <Grid container item xs={12} md={6} justify="center" direction="column">
-          <TextField
-            value={userInput.task}
-            onChange={handleChange}
-            label="Task"
-            name="task"
-            required
+      <form
+        className={classes.formClases}
+        onSubmit={(event) => {
+          handleSubmit(
+            event,
+            userInput,
+            addTask,
+            setUserInput,
+            initialValue,
+            history,
+            incrementLastId
+          );
+        }}
+      >
+        <Card>
+          <CardMedia
+            image={FormImg}
+            title="Contemplative Reptile"
+            className={classes.media}
           />
-          <CalendarInput
-            selectedDate={userInput.dueDate}
-            handleDateChange={handleDateChange}
-          />
-          <Button type="submit" variant="contained" color="primary">
-            Add
-          </Button>
-        </Grid>
+          <CardContent className={classes.inputContainer}>
+            <TextField
+              value={userInput.task}
+              onChange={(event) => {
+                handleChange(event, userInput, setUserInput);
+              }}
+              label="Task"
+              name="task"
+              required
+            />
+            <CalendarInput
+              selectedDate={userInput.dueDate}
+              handleDateChange={(event) => {
+                handleDateChange(event, userInput, setUserInput);
+              }}
+            />
+          </CardContent>
+          <CardActions>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.addBtn}
+            >
+              Add
+            </Button>
+          </CardActions>
+        </Card>
       </form>
-    </>
+    </Box>
   );
 };
 

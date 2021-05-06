@@ -1,14 +1,14 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
-import purple from "@material-ui/core/colors/purple";
+import brown from "@material-ui/core/colors/brown";
 
 export const outerTheme = createMuiTheme({
   palette: {
-    primary: {
-      main: purple[800],
-    },
     secondary: {
-      main: green[600],
+      main: brown[300],
+    },
+    primary: {
+      main: green[800],
     },
   },
 });

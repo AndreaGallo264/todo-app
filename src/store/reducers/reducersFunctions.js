@@ -17,7 +17,7 @@ export const addNewtask = (state, payload) => ({
   list: [
     ...state.list,
     {
-      id: state.list.length + 1,
+      id: state.lastId,
       task: payload.new.task,
       complete: false,
       dueDate: payload.new.dueDate,

@@ -17,7 +17,7 @@ const ToDo = ({ todo, dispatch }) => {
     }
   };
   return (
-    <ListItem selected={todo.complete}>
+    <ListItem selected={todo.complete} button>
       <ListItemIcon>{renderIcon(todo.complete)}</ListItemIcon>
       <ListItemText
         onClick={() => {
