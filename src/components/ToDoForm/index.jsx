@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import moment from "moment";
+
 const ToDoForm = ({ addTask }) => {
   const today = moment(new Date()).format("yyyy-MM-DD");
-  const initialValue = {
-    task: "",
-    dueDate: today,
-  };
+  const initialValue = { task: "", dueDate: today };
   const [userInput, setUserInput] = useState(initialValue);
+
   const handleChange = (event) => {
-    setUserInput({
-      ...userInput,
-      [event.target.name]: event.target.value,
-    });
+    setUserInput({ ...userInput, [event.target.name]: event.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(userInput);

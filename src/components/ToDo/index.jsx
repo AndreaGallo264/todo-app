@@ -1,15 +1,19 @@
 import React from "react";
 import moment from "moment";
+import { connect } from "react-redux";
+//Actions
+import { changeTaskstate } from "../../store/actions";
 import "./style.css";
 
-const ToDo = ({ todo, handleToggle }) => {
+const ToDo = (props) => {
+  const { todo, dispatch } = props;
   const formatedDate = moment(new Date(todo.dueDate)).format("MM/DD/YYYY");
   return (
     <>
       <div
         className={todo.complete ? "strike" : ""}
         onClick={() => {
-          handleToggle(todo.id);
+          dispatch(changeTaskstate(todo.id));
         }}
       >
         {todo.task}
@@ -19,4 +23,4 @@ const ToDo = ({ todo, handleToggle }) => {
   );
 };
 
-export default ToDo;
+export default connect()(ToDo);
