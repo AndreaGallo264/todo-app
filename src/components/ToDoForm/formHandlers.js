@@ -7,8 +7,14 @@ export const handleChange = (event, userInput, setUserInput) => {
 };
 
 export const handleDateChange = (event, userInput, setUserInput) => {
-  const formatedDate = formatDate(event._d);
-  setUserInput({ ...userInput, dueDate: formatedDate });
+  if (event) {
+    if (!event._d.toString().includes("Invalid")) {
+      const formatedDate = formatDate(event._d);
+      setUserInput({ ...userInput, dueDate: formatedDate });
+    }
+  } else {
+    setUserInput({ ...userInput, dueDate: "" });
+  }
 };
 
 export const handleSubmit = (
@@ -20,13 +26,13 @@ export const handleSubmit = (
   history
 ) => {
   event.preventDefault();
-  if (!userInput.dueDate.includes("Invalid")) {
+  if (!userInput.dueDate.includes("Invalid") && userInput.dueDate.length > 0) {
     dispatch(incrementId());
     dispatch(addTask(userInput));
     setUserInput(initialValue);
+    successAlert();
+    history.push("/");
   }
-  successAlert();
-  history.push("/");
 };
 
 const successAlert = () => {

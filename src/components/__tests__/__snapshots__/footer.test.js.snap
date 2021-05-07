@@ -1,51 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer component Matches snapshot 1`] = `
-<header
-  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-appBar-1 mui-fixed MuiPaper-elevation4"
->
-  <a
-    href="/new"
-    onClick={[Function]}
+<footer>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-appBar-1 mui-fixed MuiPaper-elevation4"
   >
-    <button
-      aria-describedby={null}
-      className="MuiButtonBase-root MuiFab-root makeStyles-fabButton-2 MuiFab-secondary"
-      disabled={false}
-      onBlur={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      title="Add"
-      type="button"
+    <a
+      href="/new"
+      onClick={[Function]}
     >
-      <span
-        className="MuiFab-label"
+      <button
+        aria-describedby={null}
+        className="MuiButtonBase-root MuiFab-root makeStyles-fabButton-2 MuiFab-secondary"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        title="Add"
+        type="button"
       >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <span
+          className="MuiFab-label"
         >
-          <path
-            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-          />
-        </svg>
-      </span>
-      <span
-        className="MuiTouchRipple-root"
-      />
-    </button>
-  </a>
-</header>
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+  </header>
+</footer>
 `;

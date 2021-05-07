@@ -20,15 +20,17 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles();
   return (
-    <AppBar position="fixed" color="primary" className={classes.appBar}>
-      <Link to="/new">
-        <DarkTooltip title="Add">
-          <Fab color="secondary" className={classes.fabButton}>
-            <AddIcon />
-          </Fab>
-        </DarkTooltip>
-      </Link>
-    </AppBar>
+    <footer>
+      <AppBar position="fixed" color="primary" className={classes.appBar}>
+        <Link to="/new">
+          <DarkTooltip title="Add">
+            <Fab color="secondary" className={classes.fabButton}>
+              <AddIcon />
+            </Fab>
+          </DarkTooltip>
+        </Link>
+      </AppBar>
+    </footer>
   );
 };
 
