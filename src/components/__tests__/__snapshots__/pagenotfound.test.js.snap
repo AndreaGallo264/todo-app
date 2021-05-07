@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page not found component Matches snapshot 1`] = `
+<img
+  alt="Sorry we could not find the page you were looking for"
+  src="not-found.jpg"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+/>
+`;

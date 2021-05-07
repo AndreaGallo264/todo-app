@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { List, Typography, Grid, Paper, Box } from "@material-ui/core";
 import TaskFree from "../../assets/empty.png";
 //Components
@@ -41,4 +42,8 @@ const ToDoList = ({ list }) => {
   );
 };
 
-export default ToDoList;
+const mapStateToProps = (state) => {
+  return { list: state.list };
+};
+
+export default connect(mapStateToProps)(ToDoList);

@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import { formatDate } from "../Utils/formatDate";
+import { addTask, incrementId } from "../../store/actions";
 
 export const handleChange = (event, userInput, setUserInput) => {
   setUserInput({ ...userInput, [event.target.name]: event.target.value });
@@ -13,16 +14,15 @@ export const handleDateChange = (event, userInput, setUserInput) => {
 export const handleSubmit = (
   event,
   userInput,
-  addTask,
+  dispatch,
   setUserInput,
   initialValue,
-  history,
-  incrementLastId
+  history
 ) => {
   event.preventDefault();
   if (!userInput.dueDate.includes("Invalid")) {
-    incrementLastId();
-    addTask(userInput);
+    dispatch(incrementId());
+    dispatch(addTask(userInput));
     setUserInput(initialValue);
   }
   successAlert();

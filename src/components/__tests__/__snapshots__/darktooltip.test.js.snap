@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dark tooltip component Matches snapshot 1`] = `
+<p
+  aria-describedby={null}
+  className=""
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  onTouchEnd={[Function]}
+  onTouchStart={[Function]}
+  title="Add"
+>
+  Prueba
+</p>
+`;

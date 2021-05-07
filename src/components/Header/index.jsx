@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { AppBar, Typography, Box, Button } from "@material-ui/core";
 import { useLocation, Link } from "react-router-dom";
+import { removeCompletedTasks } from "../../store/actions";
 
-const Header = ({ filterCompletedtasks }) => {
+const Header = () => {
   let location = useLocation();
+  const dispatch = useDispatch();
   return (
     <AppBar position="fixed">
       <Box
@@ -19,7 +22,9 @@ const Header = ({ filterCompletedtasks }) => {
         </Link>
         {location.pathname === "/" && (
           <Button
-            onClick={() => filterCompletedtasks()}
+            onClick={() => {
+              dispatch(removeCompletedTasks());
+            }}
             variant="contained"
             color="secondary"
           >

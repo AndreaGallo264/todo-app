@@ -1,13 +1,14 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { changeTaskstate } from "../../store/actions";
 import { formatDate } from "../Utils/formatDate";
 
-const ToDo = ({ todo, dispatch }) => {
+const ToDo = ({ todo }) => {
   const formatedDate = formatDate(todo.dueDate);
+  const dispatch = useDispatch();
 
   const renderIcon = (completed) => {
     if (completed) {
@@ -30,4 +31,4 @@ const ToDo = ({ todo, dispatch }) => {
   );
 };
 
-export default connect()(ToDo);
+export default ToDo;

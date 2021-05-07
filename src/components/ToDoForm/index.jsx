@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   Button,
   TextField,
@@ -17,12 +18,13 @@ import FormImg from "../../assets/formImg.jpg";
 import { handleChange, handleDateChange, handleSubmit } from "./formHandlers";
 import { useHistory } from "react-router-dom";
 
-const ToDoForm = ({ addTask, incrementLastId }) => {
+const ToDoForm = () => {
   const classes = useStyles();
   const today = formatDate("");
   const initialValue = { task: "", dueDate: today };
   const [userInput, setUserInput] = useState(initialValue);
   let history = useHistory();
+  const dispatch = useDispatch();
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <Typography variant="h3" color="primary">
@@ -34,11 +36,10 @@ const ToDoForm = ({ addTask, incrementLastId }) => {
           handleSubmit(
             event,
             userInput,
-            addTask,
+            dispatch,
             setUserInput,
             initialValue,
-            history,
-            incrementLastId
+            history
           );
         }}
       >
