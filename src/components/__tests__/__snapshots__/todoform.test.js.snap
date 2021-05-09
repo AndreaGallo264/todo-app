@@ -97,7 +97,7 @@ exports[`ToDoForm component Matches snapshot 1`] = `
               onFocus={[Function]}
               required={true}
               type="text"
-              value="2021-05-07"
+              value="2021-05-08"
             />
             <div
               className="MuiInputAdornment-root MuiInputAdornment-positionEnd"

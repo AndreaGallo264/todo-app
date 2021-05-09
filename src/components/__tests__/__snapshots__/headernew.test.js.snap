@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Matches snapshot 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+>
+  <div
+    className="MuiBox-root MuiBox-root-1"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h3 MuiTypography-colorSecondary"
+      >
+        To do App
+      </h2>
+    </a>
+  </div>
+</header>
+`;
